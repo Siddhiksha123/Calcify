@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        #main {
+            width: 300px;
+            height: 300px;
+            background-color: black;
+        }
+
+        input {
+            width: 20%;
+            height: 40px;
+            font-size: 30px;
+            margin: 6px;
+        }
+
+        #eee {
+            width: 90%;
+            height: 50px;
+            background-color: silver;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <form name="myform">
+            <input type="text" name="Swati" placeholder="0" id="eee" value="0"> <br>
+            <input type="button" value="1" onclick="myform.Swati.value+=1">
+            <input type="button" value="2" onclick="myform.Swati.value+=2">
+            <input type="button" value="3" onclick="myform.Swati.value+=3">
+            <input type="button" value="+" onclick="add()">
+            <br>
+            <input type="button" value="4" onclick="myform.Swati.value+=4">
+            <input type="button" value="5" onclick="myform.Swati.value+=5">
+            <input type="button" value="6" onclick="myform.Swati.value+=6">
+            <input type="button" value="-" onclick="sub()">
+            <br>
+            <input type="button" value="7" onclick="myform.Swati.value+=7">
+            <input type="button" value="8" onclick="myform.Swati.value+=8">
+            <input type="button" value="9" onclick="myform.Swati.value+=9">
+            <input type="button" value="/" onclick="divi()">
+            <br>
+            <input type="button" value="c" onclick="myform.Swati.value='0'">
+            <input type="button" value="0" onclick="myform.Swati.value+=0">
+            <input type="button" value="=" onclick="myform.Swati.value=eval(myform.Swati.value)">
+            <input type="button" value="x" onclick="multi()">
+            <br>
+        </form>
+    </div>
+    <script>
+        function add() {
+            var act = myform.Swati.value;
+            var b = act.charAt(act.length - 1);
+            if (b !== '+' && b !== '-' && b !== '/' && b !== '*') {
+                myform.Swati.value += '+';
+            }
+        }
+
+        function sub() {
+            var act = myform.Swati.value;
+            var b = act.charAt(act.length - 1);
+            if (b !== '+' && b !== '-' && b !== '/' && b !== '*') {
+                myform.Swati.value += '-';
+            }
+        }
+
+        function divi() {
+            var act = myform.Swati.value;
+            var b = act.charAt(act.length - 1);
+            if (b !== '+' && b !== '-' && b !== '/' && b !== '*') {
+                myform.Swati.value += '/';
+            }
+        }
+
+        function multi() {
+            var act = myform.Swati.value;
+            var b = act.charAt(act.length - 1);
+            if (b !== '+' && b !== '-' && b !== '/' && b !== '*') {
+                myform.Swati.value += '*';
+            }
+        }
+    </script>
+</body>
+
+</html>
